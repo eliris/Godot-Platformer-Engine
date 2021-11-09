@@ -3,9 +3,9 @@
  You may use this for your platformer projects
  assets from [opengameart.org](opengameart.org)
 
-##Features
- -Walk
- -Dash
+## Features
+ -Walk.
+ -Dash..
  -Wall slide
  -Wall slide + jump
  -Shoot bullets
