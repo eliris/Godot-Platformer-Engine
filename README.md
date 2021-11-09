@@ -4,10 +4,10 @@
  assets from [opengameart.org](opengameart.org)
 
 ## Features
- -Walk.
- -Dash..
- -Wall slide
- -Wall slide + jump
- -Shoot bullets
- -Enemies with damage counter
+  -Walk
+  -Dash
+  -Wall slide
+  -Wall slide + jump
+  -Shoot bullets
+  -Enemies with damage counter
  
