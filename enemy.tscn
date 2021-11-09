@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Platformer/sprite_free46.png" type="Texture" id=1]
+[ext_resource path="res://Platformer/sprite_free48.png" type="Texture" id=2]
+[ext_resource path="res://Platformer/sprite_free49.png" type="Texture" id=3]
+[ext_resource path="res://Platformer/sprite_free47.png" type="Texture" id=4]
+[ext_resource path="res://enemy.gd" type="Script" id=5]
+[ext_resource path="res://Platformer/sprite_free69.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dead",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.14164, 10.6754 )
+
+[node name="enemy" type="KinematicBody2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.891903, 4.27024 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 8.3085, 0.707108 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
